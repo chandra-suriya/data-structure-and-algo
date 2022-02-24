@@ -59,3 +59,29 @@ int main() {
     {
         cout<<ar[i]<<endl;
     }
+
+    // cycle sort
+
+    int main() {
+    int arr[5]={5,3,2,4,1};
+    int i=0;
+    while(i<5)
+    {
+        int check = arr[i]-1,temp;
+        if(arr[i]!=arr[check])
+        {
+            temp=arr[i];
+            arr[i]=arr[check];
+            arr[check]=temp;
+        }
+        else{
+            i++;
+        }
+    }
+    for(int i=0;i<5;i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+
+    return 0;
+}
