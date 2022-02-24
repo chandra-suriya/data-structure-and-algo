@@ -35,3 +35,27 @@ int main() {
     return 0;
 }
 
+// Insertion sort
+
+int main() {
+    // Write C++ code here
+    int ar[5]={1,5,4,2,3},temp;
+    for(int i=0;i<5;i++)
+    {
+        for(int j=i+1;j>0;j--)
+        {
+            if(ar[j]<ar[j-1])
+            {
+                temp=ar[j];
+                ar[j]=ar[j-1];
+                ar[j-1]=temp;
+            }
+            else {
+                break;
+            }
+    }
+    }
+    for(int i=0;i<5;i++)
+    {
+        cout<<ar[i]<<endl;
+    }
