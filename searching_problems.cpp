@@ -66,7 +66,7 @@ int main()
 }
 
 //3. find the floor of a number in a sorted array
-int ceiling(int ar[7],int tar)
+int floor(int ar[7],int tar)
 {
    int start=0;
    int end=6;
@@ -93,6 +93,6 @@ int ceiling(int ar[7],int tar)
 int main()
 {
    int ar[7]={2,3,5,9,14,16,18},tar=14;
-   cout<<ceiling(ar,tar);
+   cout<<(ar,tar);
     return 0;
 }
