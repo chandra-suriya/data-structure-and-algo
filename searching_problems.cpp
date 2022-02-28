@@ -96,3 +96,51 @@ int main()
    cout<<(ar,tar);
     return 0;
 }
+
+
+//first and last position of a target in a sorted array
+int bsearch(int ar[7],bool first,int tar)
+{
+  int fir=0,last=6,mid,ans=-1;
+  while(fir<=last)
+  {
+      mid = fir + (last-first)/2;
+      if(ar[mid]<tar)
+      {
+          fir=mid+1;
+      }
+      else if(ar[mid]>tar)
+      {
+          last=mid-1;
+      }
+      else
+      {
+          ans=mid;
+          if(first)
+          {
+              last=mid-1;
+          }
+          else
+          {
+              fir=mid+1;
+          }
+      }
+  }
+  return ans;
+}
+
+int main()
+{
+    int ar[7]={1,2,3,3,4,5,6},tar=3;
+    cout<<bsearch(ar,true,tar);
+    cout<<bsearch(ar,false,tar);
+
+    return 0;
+}
+
+    // Write C++ code here
+    std::cout << "Hello world!";
+
+    return 0;
+}
+
