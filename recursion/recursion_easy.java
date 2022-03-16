@@ -16,7 +16,8 @@ public class recursion_easy {
       palindrome(33233);
       //count steps
       System.out.println("count steps");
-      int out = steps(14);
+      int outp = steps(14);
+      System.out.println(outp);
     }
     static void nto1(int n){
         if(n==0)
