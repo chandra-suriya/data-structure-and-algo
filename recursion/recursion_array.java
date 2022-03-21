@@ -18,7 +18,10 @@ public class recursion_array {
             System.out.println("the value is not there");
         }
         //Search with multiple values in array
-        findallindex(arr,4,0);
+       ArrayList<Integer> list = new ArrayList<>();
+       System.out.println(findallindex(arr,4,0,list));
+       //Search with multiple values in array part2
+       System.out.println(findallindex1(arr,4,0));
     }
     static boolean sorted(int[] arr,int ind){
         if(ind == arr.length-1){
@@ -30,19 +33,31 @@ public class recursion_array {
         if(ind==arr.length-1){
             return false;
         }
-        return arr[ind]==tar || search(arr,tar,ind+1);
+        return arr[ind]==tar || search(arr, tar, ind+1);
     }
 
-    static ArrayList<Integer> list =new ArrayList<>();
-    static void findallindex(int[] arr,int tar,int ind){
+    static ArrayList<Integer> findallindex(int[] arr, int tar, int ind,ArrayList<Integer> list){
         if(ind==arr.length-1){
-            System.out.println(list);
+            return list;
         }
         if(arr[ind]==tar){
             list.add(ind);
         }
-        findallindex(arr,tar,ind+1);
+        return findallindex(arr,tar,ind+1,list);
 
+    }
+    //with array important 
+    static ArrayList<Integer> findallindex1(int[] arr,int tar,int ind){
+        ArrayList<Integer> list1=new ArrayList<>();
+        if(ind==arr.length-1){
+            return list1;
+        }
+        if(arr[ind]==tar){
+            list1.add(ind);
+        }
+        ArrayList<Integer> output=findallindex1(arr,tar,ind+1);
+        list1.addAll(output);
+        return list1;
     }
 
 }
