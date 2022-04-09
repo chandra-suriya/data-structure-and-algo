@@ -19,6 +19,8 @@ public class recursion_patterns {
       // 4. selection sort
       selectionsort(ar,4,4,0,0,-1,0);
       System.out.println(Arrays.toString(ar));
+      //5 .variable length arguments
+       varargs(2,3,4,5,6);
     }
     static void printstarrev(int r,int c,int i, int j){
         // base case
@@ -81,5 +83,9 @@ public class recursion_patterns {
             ar[ind] = temp;
          selectionsort(ar,r,c-1,0,j+1,-1,ind);
     }
+    }
+    // variable length arguments
+    static void varargs(int ...varargs){
+        System.out.println(Arrays.toString(varargs));
     }
 }
