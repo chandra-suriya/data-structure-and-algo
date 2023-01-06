@@ -76,13 +76,34 @@ int count_subseq_k(int n, int i, int k, int sums){
     return first+second;
 }
 
+bool check_valid_subseq(int n, int i, int k, int sums){
+    if(i==n){
+        if(sums==k){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    sums=sums+vec[i];
+    if(check_valid_subseq(n,i+1,k,sums)){
+        return true;
+    }
+    sums=sums-vec[i];
+    if(check_valid_subseq(n,i+1,k,sums)){
+        return true;
+    }
+    return false;
+    
+}
+
 int main(){
     vector<int>vs;
     int n;
     cout<<"1.print subsequence"<<endl;
     cout<<"2.print the subset whose sum is equal to k"<<endl;
-    cout<<"3.Print the value one time that"<<endl;
+    cout<<"3.Print the first value of subset that"<<endl;
     cout<<"4.Count the number of subset whose sum values is equal to k"<<endl;
+    cout<<"5.check if the subset is there for sum value"<<endl;
     cin >>n;
     switch (n)
     {
@@ -104,7 +125,16 @@ int main(){
     case 4:
         {
            cout<<count_subseq_k(vec.size()-1,0,4,0);
-        }         
+        } 
+
+    case 5:
+        {
+            if(check_valid_subseq(vec.size(),0,4,0)){
+                cout<<"It is has subset of the value k";
+            }else{
+                cout<<"it is not";
+            }
+        }            
     default:
         break;
     }
