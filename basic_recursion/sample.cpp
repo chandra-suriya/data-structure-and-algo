@@ -13,11 +13,11 @@ void print_subseq_k(vector<int>vs,int n, int i, int k,int sums){
          return;
     }
    vs.push_back(vec[i]);
-   sums=sums+vec[i];
+   //sums=sums+vec[i];
 
-   print_subseq_k(vs,n, i+1,k,sums);
+   print_subseq_k(vs,n, i+1,k,sums+vec[i]);
    vs.pop_back();
-   sums=sums-vec[i];
+   //sums=sums-vec[i];
    print_subseq_k(vs,n, i+1,k,sums);
 
 }
