@@ -44,7 +44,6 @@ void combin_unique_k(int ind,int tar, vector<int> &vs,vector<vector<int>> &out, 
     }
 }
 
-
 void combinations_of_n(int ind, int tar, vector<int> &vs, vector<vector<int>> &out, vector<int> &arr){
                
     //base case
@@ -59,7 +58,6 @@ void combinations_of_n(int ind, int tar, vector<int> &vs, vector<vector<int>> &o
         vs.pop_back();
     }
 }
-
 int main(){
     cout<<"1.combination of array elements that sum to k"<<endl;
     cout<<"2. combination of array elements with no duplicates with sum to k"<<endl;
